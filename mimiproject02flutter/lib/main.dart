@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mimiproject02flutter/faker/faker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -33,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final String fullname = Faker().generateFullName();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     children: [
                       const Text("Hi ", style: TextStyle(fontSize: 15)),
-                      const Text(" youness", style: TextStyle(fontSize: 20,),),
+                      Text( " $fullname " ,
+                        style: TextStyle(fontSize: 20,),),
                       const Spacer(),
                       GestureDetector(
                         onTap: () {
@@ -83,3 +87,5 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 }
+
+
