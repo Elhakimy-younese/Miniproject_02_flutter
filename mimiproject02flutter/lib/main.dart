@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mimiproject02flutter/faker/faker.dart';
+import 'package:mimiproject02flutter/screens/calculatscreen.dart';
+import 'package:mimiproject02flutter/screens/main.container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: 20,
                           decoration: TextDecoration.underline,
                         ),
-
                       ),
                       const Spacer(),
                       GestureDetector(
@@ -79,7 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Spacer(),
                   ElevatedButton(
                       onPressed: () {
-                        print("hi   ");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => mainContainer(const Calculatescreen())));
                       },
                       child: const Text("Go"))
                 ],
